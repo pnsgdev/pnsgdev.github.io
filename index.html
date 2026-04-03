@@ -97,6 +97,44 @@
       letter-spacing: 0.02em;
       margin-bottom: 10px;
     }
+
+    .support-form {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .support-form label {
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
+    .support-form input,
+    .support-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .support-form button {
+      width: fit-content;
+      border: 1px solid var(--accent-dark);
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .support-form button:hover {
+      background: var(--accent-dark);
+    }
   </style>
 </head>
 <body>
@@ -115,13 +153,19 @@
     <section class="card">
       <h2>Support</h2>
       <p>
-        If you need help, have feedback, or want to report an issue, contact us here:
+        If you need help, have feedback, or want to report an issue, use this form:
       </p>
-      <p>
-        <a href="https://formspree.io/f/xjgeanqy" target="_blank" rel="noopener noreferrer">Contact Support</a>
-      </p>
+      <form class="support-form" action="https://formspree.io/f/xjgeanqy" method="POST">
+        <label for="email">Your email</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us what happened" required></textarea>
+
+        <button type="submit">Send Support Request</button>
+      </form>
       <p class="muted">
-        Replace the link above with your actual support form or support email page.
+        This form posts directly to Formspree using method="POST".
       </p>
     </section>
 
